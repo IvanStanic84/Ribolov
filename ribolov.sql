@@ -43,3 +43,9 @@ create table natjecanje(
 ); 
 
 
+alter table ribic add foreign key (ribolovnodrustvo) references ribolovnodrustvo(sifra);
+alter table natjecanje add foreign key (ribic) references ribic(sifra);
+alter table natjecanje add foreign key (riba) references riba(sifra);
+alter table natjecanje add foreign key (riboloviste) references riboloviste(sifra);
+
+
