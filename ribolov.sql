@@ -14,33 +14,31 @@ create table ribolovnodrustvo(
     sifra int not null primary key auto_increment,
     ime varchar(50) not null,
     mjesto varchar(50) not null,
-    oib int,
-    iban char(11)
+    oib char(11),
+    iban varchar(50)
+);
+
+create table riba(
+    sifra int not null primary key auto_increment,
+    masa decimal(18,2) not null,
+    vrsta varchar(50) not null
 );
 
 create table ribic(
     sifra int not null primary key auto_increment,
     ime varchar(50) not null,
     prezime varchar(50) not null,
-    oib int,
+    oib char(11),
     ribolovnodrustvo int not null
-);
-
-create table riba(
-    sifra int not null primary key auto_increment,
-    masa decimal(18,2) not null,
-    duljina decimal (18,2) not null,
-    riboloviste int not null,
-    ribic int not null
 );
 
 create table natjecanje(
     sifra int not null primary key auto_increment,
-    naziv varchar(50) not null,
+    vrsta varchar(50) not null,
     od datetime not null,
     do datetime not null,
     ribic int not null,
-    ribolovnodrustvo int not null,
+    riboloviste int not null,
     riba int not null
 ); 
 
