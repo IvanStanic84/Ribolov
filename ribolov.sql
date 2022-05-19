@@ -20,7 +20,6 @@ create table ribolovnodrustvo(
 
 create table riba(
     sifra int not null primary key auto_increment,
-    masa decimal(18,2) not null,
     vrsta varchar(50) not null
 );
 
@@ -32,10 +31,11 @@ create table ribic(
     ribolovnodrustvo int not null
 );
 
-create table veza(
+create table ulov(
     natjecanje int not null,
     ribic int not null,
-    riba int not null
+    riba int not null,
+    masa int not null
 );
 
 create table natjecanje(
@@ -48,9 +48,9 @@ create table natjecanje(
 
 
 alter table ribic add foreign key (ribolovnodrustvo) references ribolovnodrustvo(sifra);
-alter table veza add foreign key (ribic) references ribic(sifra);
-alter table veza add foreign key (riba) references riba(sifra);
-alter table veza add foreign key (natjecanje) references natjecanje(sifra);
+alter table ulov add foreign key (ribic) references ribic(sifra);
+alter table ulov add foreign key (riba) references riba(sifra);
+alter table ulov add foreign key (natjecanje) references natjecanje(sifra);
 alter table natjecanje add foreign key (riboloviste) references riboloviste(sifra);
 
 
