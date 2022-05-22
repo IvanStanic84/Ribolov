@@ -1,7 +1,7 @@
 # C:\xampp\mysql\bin\mysql -uroot --default_character_set=utf8 < C:\Users\Korisnik\Documents\GitHub\Ribolov\ribolov.sql
 
 drop database if exists ribolov;
-create database ribolov;
+create database ribolov character set utf8;
 use ribolov;
 
 create table riboloviste(
@@ -55,10 +55,20 @@ alter table ulov add foreign key (natjecanje) references natjecanje(sifra);
 alter table natjecanje add foreign key (riboloviste) references riboloviste(sifra);
 
 insert into riboloviste(naziv, vrstavode)
-values ('Stara Drava, P. Podgajci', 'Stajačica, rukavac'),
-('Vučica, Ivanovci', 'Tekučica'),
+values 
+('Stara Drava, P. Podgajci', 'Stajačica, rukavac'),
+('Vučica, Ivanovci', 'Tekučica, rijeka'),
 ('Mrtvača, Ladimirevci', 'Stajačica, bara'),
-('Golinci', 'Stajačica, ribnjak');
+('Ribnjak, Golinci', 'Stajačica, ribnjak'),
+('Bajer, Bizovac', 'Stajačica, bajer');
+
+insert into ribolovnodrustvo(ime, mjesto)
+values 
+('SRD Linjak', 'Ivanovci'),
+('SRU Valpovka', 'Valpovo'),
+('USR Amur', 'Ladimirevci'),
+('Smuđ', 'Satnica'),
+('UŠR Karaš', 'Šag');
 
 
 
