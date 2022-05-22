@@ -54,4 +54,11 @@ alter table ulov add foreign key (riba) references riba(sifra);
 alter table ulov add foreign key (natjecanje) references natjecanje(sifra);
 alter table natjecanje add foreign key (riboloviste) references riboloviste(sifra);
 
+insert into riboloviste(naziv, vrstavode)
+values ('Stara Drava, P. Podgajci', 'Stajačica, rukavac'),
+('Vučica, Ivanovci', 'Tekučica'),
+('Mrtvača, Ladimirevci', 'Stajačica, bara'),
+('Golinci', 'Stajačica, ribnjak');
+
+
 
