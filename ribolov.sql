@@ -31,13 +31,6 @@ create table ribic(
     ribolovnodrustvo int not null
 );
 
-create table ulov(
-    natjecanje int not null,
-    ribic int not null,
-    riba int not null,
-    masa int not null
-);
-
 create table natjecanje(
     sifra int not null primary key auto_increment,
     vrsta varchar(50) not null,
@@ -45,6 +38,14 @@ create table natjecanje(
     do datetime not null,
     riboloviste int not null
 ); 
+
+create table ulov(
+    sifra int not null primary key auto_increment,
+    natjecanje int not null,
+    ribic int not null,
+    riba int not null,
+    masa int not null
+);
 
 
 alter table ribic add foreign key (ribolovnodrustvo) references ribolovnodrustvo(sifra);
