@@ -85,4 +85,11 @@ values ('Ilija', 'Mandić', 1),
 ('Sarah', 'Starčević', 4),
 ('Ingrid', 'Gliša', 5);
 
+insert into natjecanje (vrsta, od, do, riboloviste)
+values ('1. kolo - Županijska liga', '2022-05-22 9:00', '2022-05-22 12:00', 1),
+('2. kolo - Županijska liga', '2022-06-12 9:00', '2022-06-12 12:00', 2),
+('3. kolo - Županijska liga', '2022-07-01 9:00', '2022-07-01 12:00', 3),
+('Županijski kup', '2022-07-09 9:00', '2022-07-09 15:00', 4),
+('Državni kup', '2022-09-01 9:00', '2022-09-04 12:00', 5);
+
 
