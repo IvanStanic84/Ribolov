@@ -70,5 +70,14 @@ values
 ('Smuđ', 'Satnica'),
 ('UŠR Karaš', 'Šag');
 
+insert into riba(vrsta)
+values 
+('Šaran'),
+('Smuđ'),
+('Štuka'),
+('Babuška'),
+('Ostalo');
+
+
 
 
