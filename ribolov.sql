@@ -78,6 +78,11 @@ values
 ('Babuška'),
 ('Ostalo');
 
-
+insert into ribic(ime, prezime, ribolovnodrustvo)
+values ('Ilija', 'Mandić', 1),
+('Josip', 'Maltašić', 2),
+('Luka', 'Basa', 3),
+('Sarah', 'Starčević', 4),
+('Ingrid', 'Gliša', 5);
 
 
