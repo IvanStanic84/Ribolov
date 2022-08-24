@@ -3,32 +3,42 @@ package edunova.model;
 import java.util.Date;
 
 public class Natjecanje extends Entitet {
-	
+
 	private String vrsta;
-	private Date od;
-	private Date do;
+	private Date pocetak;
+	private Date kraj;
 	private Riboloviste riboloviste;
-	
-	
+
 	public String getVrsta() {
 		return vrsta;
 	}
+
 	public void setVrsta(String vrsta) {
 		this.vrsta = vrsta;
 	}
-	public Date getOd() {
-		return od;
+
+	public Date getPocetak() {
+		return pocetak;
 	}
-	public void setOd(Date od) {
-		this.od = od;
+
+	public void setPocetak(Date pocetak) {
+		this.pocetak = pocetak;
 	}
+
+	public Date getKraj() {
+		return kraj;
+	}
+
+	public void setKraj(Date kraj) {
+		this.kraj = kraj;
+	}
+
 	public Riboloviste getRiboloviste() {
 		return riboloviste;
 	}
+
 	public void setRiboloviste(Riboloviste riboloviste) {
 		this.riboloviste = riboloviste;
 	}
-	
-	
 
 }
