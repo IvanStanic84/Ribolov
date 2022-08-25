@@ -1,6 +1,8 @@
 package edunova.model;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class Natjecanje extends Entitet {
 
@@ -8,6 +10,21 @@ public class Natjecanje extends Entitet {
 	private Date pocetak;
 	private Date kraj;
 	private Riboloviste riboloviste;
+
+	private List<Ulov> ulovi = new ArrayList<>();
+
+	public Natjecanje(Integer sifra, String vrsta, Date pocetak, Date kraj, Riboloviste riboloviste, List<Ulov> ulovi) {
+		super(sifra);
+		this.vrsta = vrsta;
+		this.pocetak = pocetak;
+		this.kraj = kraj;
+		this.riboloviste = riboloviste;
+		this.ulovi = ulovi;
+	}
+
+	public Natjecanje() {
+		super();
+	}
 
 	public String getVrsta() {
 		return vrsta;

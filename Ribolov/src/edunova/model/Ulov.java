@@ -7,6 +7,18 @@ public class Ulov extends Entitet {
 	private Riba riba;
 	private Integer masa;
 
+	public Ulov(Integer sifra, Natjecanje natjecanje, Ribic ribic, Riba riba, Integer masa) {
+		super(sifra);
+		this.natjecanje = natjecanje;
+		this.ribic = ribic;
+		this.riba = riba;
+		this.masa = masa;
+	}
+
+	public Ulov() {
+		super();
+	}
+
 	public Natjecanje getNatjecanje() {
 		return natjecanje;
 	}

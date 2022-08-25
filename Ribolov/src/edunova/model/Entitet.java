@@ -4,6 +4,15 @@ public class Entitet {
 
 	private Integer sifra;
 
+	public Entitet() {
+		super();
+	}
+
+	public Entitet(Integer sifra) {
+		super();
+		this.sifra = sifra;
+	}
+
 	public Integer getSifra() {
 		return sifra;
 	}

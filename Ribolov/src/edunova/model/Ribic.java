@@ -7,6 +7,14 @@ public class Ribic extends Entitet {
 	private String oib;
 	private Ribolovnodrustvo ribolovnodrustvo;
 
+	public Ribic(Integer sifra, String ime, String prezime, String oib, Ribolovnodrustvo ribolovnodrustvo) {
+		super(sifra);
+		this.ime = ime;
+		this.prezime = prezime;
+		this.oib = oib;
+		this.ribolovnodrustvo = ribolovnodrustvo;
+	}
+
 	public String getIme() {
 		return ime;
 	}
@@ -17,6 +25,10 @@ public class Ribic extends Entitet {
 
 	public String getPrezime() {
 		return prezime;
+	}
+
+	public Ribic() {
+		super();
 	}
 
 	public void setPrezime(String prezime) {

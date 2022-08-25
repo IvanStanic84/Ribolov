@@ -7,12 +7,24 @@ public class Ribolovnodrustvo extends Entitet {
 	private String oib;
 	private String iban;
 
+	public Ribolovnodrustvo(Integer sifra, String ime, String mjesto, String oib, String iban) {
+		super(sifra);
+		this.ime = ime;
+		this.mjesto = mjesto;
+		this.oib = oib;
+		this.iban = iban;
+	}
+
 	public String getIme() {
 		return ime;
 	}
 
 	public void setIme(String ime) {
 		this.ime = ime;
+	}
+
+	public Ribolovnodrustvo() {
+		super();
 	}
 
 	public String getMjesto() {
