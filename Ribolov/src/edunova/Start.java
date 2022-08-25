@@ -1,14 +1,19 @@
 package edunova;
 
+import java.util.List;
 import java.util.Scanner;
-
+import java.util.ArrayList;
+import edunova.model.Natjecanje;
+import edunova.util.NatjecanjeCRUD;
 import edunova.util.Pomocno;
 
 public class Start {
 
+	private List<Natjecanje> natjecanja;
+
 	public Start() {
 		Pomocno.ulaz = new Scanner(System.in);
-		System.out.println("***** Ribolov konzolna aplikacija V1 *****");
+		System.out.println("***** Ribolov konzolna aplikacija *****");
 		izbornik();
 		Pomocno.ulaz.close();
 	}
@@ -52,9 +57,9 @@ public class Start {
 	}
 
 	private void natjecanja() {
-		System.out.println("Doðe izbornik za 'Natjecanja'");
-
-		izbornik();
+		System.out.println("----Natjecanje----");
+		izbornikProgram();
+		pokreniNatjecanjeAkcija();
 
 	}
 
@@ -94,6 +99,40 @@ public class Start {
 		System.out.println("");
 		pokreniProgram();
 
+	}
+
+	private void pokreniNatjecanjeAkcija() {
+		switch (Pomocno.ucitajInt("Odaberite akciju", 1, 5)) {
+		case 1:
+			natjecanja.add(NatjecanjeCRUD.unosNovog());
+			natjecanja();
+			break;
+		case 2:
+			NatjecanjeCRUD.ispis(natjecanja);
+			natjecanja();
+			break;
+		case 3:
+			NatjecanjeCRUD.ispis(natjecanja);
+			NatjecanjeCRUD.promjena(natjecanja.get(Pomocno.ucitajInt("Odaberi natjecanje", 1, natjecanja.size()) - 1));
+			natjecanja();
+			break;
+		case 4:
+			NatjecanjeCRUD.ispis(natjecanja);
+			natjecanja.remove(Pomocno.ucitajInt("Odaberi natjecanje", 1, natjecanja.size()) - 1);
+			natjecanja();
+			break;
+		case 5:
+			izbornik();
+		}
+
+	}
+
+	private void izbornikProgram() {
+		System.out.println("1. Unos");
+		System.out.println("2. Pregled");
+		System.out.println("3. Promjena");
+		System.out.println("4. Brisanje");
+		System.out.println("5. Povratak na glavni izbornik");
 	}
 
 	public static void main(String[] args) {
