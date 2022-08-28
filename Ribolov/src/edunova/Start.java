@@ -1,6 +1,7 @@
 package edunova;
 
 import java.util.ArrayList;
+
 import java.util.List;
 
 import java.util.Scanner;
@@ -12,7 +13,11 @@ import edunova.model.Ribolovnodrustvo;
 import edunova.model.Ulov;
 import edunova.util.NatjecanjeCRUD;
 import edunova.util.Pomocno;
+import edunova.util.RibaCRUD;
+import edunova.util.RibicCRUD;
 import edunova.util.RibolovisteCRUD;
+import edunova.util.RibolovnodrustvoCRUD;
+import edunova.util.UlovCRUD;
 
 public class Start {
 
@@ -73,7 +78,7 @@ public class Start {
 	private void pokreniUlovAkcija() {
 		switch (Pomocno.ucitajInt("Odaberite akciju", 1, 5)) {
 		case 1:
-			ulovi.add(UloviCRUD.unosNovog());
+			ulovi.add(UlovCRUD.unosNovog(natjecanja, ribe, ribici));
 			ulovi();
 			break;
 		case 2:
@@ -106,8 +111,29 @@ public class Start {
 	}
 
 	private void pokreniRibolovnodrustvoAkcija() {
-		// TODO Auto-generated method stub
-
+		switch (Pomocno.ucitajInt("Odaberite akciju", 1, 5)) {
+		case 1:
+			ribolovnadrustva.add(RibolovnodrustvoCRUD.unosNovog());
+			ribolovnadrustva();
+			break;
+		case 2:
+			RibolovnodrustvoCRUD.ispis(ribolovnadrustva);
+			ribolovnadrustva();
+			break;
+		case 3:
+			RibolovnodrustvoCRUD.ispis(ribolovnadrustva);
+			RibolovnodrustvoCRUD.promjena(
+					ribolovnadrustva.get(Pomocno.ucitajInt("Odaberi ribolovno društvo", 1, ulovi.size()) - 1));
+			ribolovnadrustva();
+			break;
+		case 4:
+			RibolovnodrustvoCRUD.ispis(ribolovnadrustva);
+			ribolovnadrustva.remove(Pomocno.ucitajInt("Odaberi ribolovno društvo", 1, ribolovnadrustva.size()) - 1);
+			ribolovnadrustva();
+			break;
+		case 5:
+			izbornik();
+		}
 	}
 
 	private void natjecanja() {
@@ -121,7 +147,7 @@ public class Start {
 	private void pokreniNatjecanjeAkcija() {
 		switch (Pomocno.ucitajInt("Odaberite akciju", 1, 5)) {
 		case 1:
-			natjecanja.add(NatjecanjeCRUD.unosNovog());
+			natjecanja.add(NatjecanjeCRUD.unosNovog(ribolovista));
 			natjecanja();
 			break;
 		case 2:
@@ -187,7 +213,29 @@ public class Start {
 	}
 
 	private void pokreniRibaAkcija() {
-		// TODO Auto-generated method stub
+
+		switch (Pomocno.ucitajInt("Odaberite akciju", 1, 5)) {
+		case 1:
+			ribe.add(RibaCRUD.unosNovog());
+			ribe();
+			break;
+		case 2:
+			RibaCRUD.ispis(ribe);
+			ribe();
+			break;
+		case 3:
+			RibaCRUD.ispis(ribe);
+			RibaCRUD.promjena(ribe.get(Pomocno.ucitajInt("Odaberi ribu", 1, ribe.size()) - 1));
+			ribe();
+			break;
+		case 4:
+			RibaCRUD.ispis(ribe);
+			ribe.remove(Pomocno.ucitajInt("Odaberi ribu", 1, ribe.size()) - 1);
+			ribe();
+			break;
+		case 5:
+			izbornik();
+		}
 
 	}
 
@@ -201,7 +249,28 @@ public class Start {
 	}
 
 	private void pokreniRibicAkcija() {
-		// TODO Auto-generated method stub
+		switch (Pomocno.ucitajInt("Odaberite akciju", 1, 5)) {
+		case 1:
+			ribici.add(RibicCRUD.unosNovog(ribolovnadrustva));
+			ribici();
+			break;
+		case 2:
+			RibicCRUD.ispis(ribici);
+			ribici();
+			break;
+		case 3:
+			RibicCRUD.ispis(ribici);
+			RibicCRUD.promjena(ribici.get(Pomocno.ucitajInt("Odaberi ribièa", 1, ribici.size()) - 1));
+			ribici();
+			break;
+		case 4:
+			RibicCRUD.ispis(ribici);
+			ribici.remove(Pomocno.ucitajInt("Odaberi ribièa", 1, ribici.size()) - 1);
+			ribici();
+			break;
+		case 5:
+			izbornik();
+		}
 
 	}
 
