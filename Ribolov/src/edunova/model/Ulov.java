@@ -1,5 +1,6 @@
 package edunova.model;
 
+
 public class Ulov extends Entitet {
 
 	private Natjecanje natjecanje;

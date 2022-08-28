@@ -1,6 +1,6 @@
 package edunova.model;
 
-public class Entitet {
+public abstract class Entitet {
 
 	private Integer sifra;
 

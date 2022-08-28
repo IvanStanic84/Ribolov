@@ -15,16 +15,16 @@ public class Ribolovnodrustvo extends Entitet {
 		this.iban = iban;
 	}
 
+	public Ribolovnodrustvo() {
+		super();
+	}
+
 	public String getIme() {
 		return ime;
 	}
 
 	public void setIme(String ime) {
 		this.ime = ime;
-	}
-
-	public Ribolovnodrustvo() {
-		super();
 	}
 
 	public String getMjesto() {

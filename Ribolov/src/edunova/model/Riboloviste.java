@@ -5,6 +5,16 @@ public class Riboloviste extends Entitet {
 	private String naziv;
 	private String vrstavode;
 
+	public Riboloviste(Integer sifra, String naziv, String vrstavode) {
+		super(sifra);
+		this.naziv = naziv;
+		this.vrstavode = vrstavode;
+	}
+
+	public Riboloviste() {
+		super();
+	}
+
 	public String getNaziv() {
 		return naziv;
 	}
