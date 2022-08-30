@@ -1,9 +1,7 @@
 package edunova;
 
 import java.util.ArrayList;
-
 import java.util.List;
-
 import java.util.Scanner;
 import edunova.model.Natjecanje;
 import edunova.model.Riba;
@@ -36,10 +34,38 @@ public class Start {
 		ribici = new ArrayList<>();
 		ulovi = new ArrayList<>();
 
+		inicijalniPodaci();
+
 		Pomocno.ulaz = new Scanner(System.in);
 		System.out.println("***** Ribolov konzolna aplikacija *****");
 		izbornik();
 		Pomocno.ulaz.close();
+	}
+
+	private void inicijalniPodaci() {
+
+		ribolovnadrustva.add(new Ribolovnodrustvo(1, "Linjak", "Ivanovci", "", ""));
+		ribolovnadrustva.add(new Ribolovnodrustvo(2, "Smuð", "Satnica", "", ""));
+		ribolovnadrustva.add(new Ribolovnodrustvo(3, "Karas", "Šag", "", ""));
+
+		ribe.add(new Riba(1, "Keder"));
+		ribe.add(new Riba(2, "Babuška"));
+		ribe.add(new Riba(3, "Deverika"));
+
+		ribolovista.add(new Riboloviste(1, "Podgajci", "Stajaèica"));
+		ribolovista.add(new Riboloviste(2, "Ivanovci", "Tekuèica"));
+		ribolovista.add(new Riboloviste(3, "Ladimirevci", "Bara"));
+
+		Ribic r = new Ribic();
+		r.setIme("Sofija");
+		r.setPrezime("Staniæ");
+		r.setRibolovnodrustvo(ribolovnadrustva.get(0));
+		ribici.add(r);
+		r.setIme("Vanesa");
+		r.setPrezime("Kasapoviæ");
+		r.setRibolovnodrustvo(ribolovnadrustva.get(1));
+		ribici.add(r);
+
 	}
 
 	private void pokreniProgram() {

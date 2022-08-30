@@ -10,10 +10,10 @@ public class RibicCRUD {
 	public static Ribic unosNovog(List<Ribolovnodrustvo> ribolovnadrustva) {
 
 		Ribic s = new Ribic();
-		s.setSifra(Pomocno.ucitajInt("Unesite šifru natjecanja (pozitivni broj)", true));
-		s.setIme(Pomocno.ucitajString("Unesi ime natjecatelja"));
-		s.setPrezime(Pomocno.ucitajString("Unesi prezime natjecatelja"));
-		s.setOib(Pomocno.ucitajString("Unesi OIB natjecatelja"));
+		s.setSifra(Pomocno.ucitajInt("Unesite šifru ribièa (pozitivni broj)", true));
+		s.setIme(Pomocno.ucitajString("Unesi ime ribièa"));
+		s.setPrezime(Pomocno.ucitajString("Unesi prezime ribièa"));
+		s.setOib(Pomocno.ucitajString("Unesi OIB ribièa"));
 
 		System.out.println("Popis ribolovnih društava u aplikaciji");
 		RibolovnodrustvoCRUD.ispis(ribolovnadrustva);

@@ -1,5 +1,9 @@
 package edunova.util;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.Scanner;
 
 public class Pomocno {
@@ -61,6 +65,18 @@ public class Pomocno {
 				continue;
 			}
 			return s;
+		}
+	}
+
+	public static Date ucitajDatum(String poruka) {
+		SimpleDateFormat df = new SimpleDateFormat("d MMM yyyy HH:mm");
+		while (true) {
+			System.out.print(poruka);
+			try {
+				return df.parse(ulaz.nextLine());
+			} catch (Exception e) {
+				System.out.println("Ne ispravan format datuma. " + "Primjer unosa: " + df.format(new Date()));
+			}
 		}
 	}
 

@@ -10,11 +10,11 @@ public class NatjecanjeCRUD {
 	public static Natjecanje unosNovog(List<Riboloviste> ribolovista) {
 
 		Natjecanje s = new Natjecanje();
+
 		s.setSifra(Pomocno.ucitajInt("Unesite šifru natjecanja (pozitivni broj)", true));
 		s.setVrsta(Pomocno.ucitajString("Unesi vrstu natjecanja"));
-		// s.setPocetak(Pomocno.ucitajString("Unesi vrstu natjecanja"));
-		// s.setKraj(Pomocno.ucitajString("Unesi vrstu natjecanja"));
-
+		s.setPocetak(Pomocno.ucitajDatum("Unesi datum i vrijeme poèetka"));
+		s.setKraj(Pomocno.ucitajDatum("Unesi datum i vrijeme završetka"));
 		System.out.println("Popis ribolovišta u aplikaciji");
 		RibolovisteCRUD.ispis(ribolovista);
 		s.setRiboloviste(ribolovista.get(Pomocno.ucitajInt("Odaberi ribolovište", 1, ribolovista.size()) - 1));
@@ -28,7 +28,7 @@ public class NatjecanjeCRUD {
 		System.out.println("");
 		System.out.println("Natjecanja u aplikaciji");
 		for (Natjecanje s : natjecanja) {
-			System.out.println(rb++ + ". " + s.getVrsta());
+			System.out.println(rb++ + ". " + s.getVrsta() + " " + s.getRiboloviste() + " " + s.getPocetak());
 		}
 		System.out.println("----------");
 	}
@@ -36,8 +36,8 @@ public class NatjecanjeCRUD {
 	public static void promjena(Natjecanje s) {
 		s.setSifra(Pomocno.ucitajInt("šifra (" + s.getSifra() + ")", true));
 		s.setVrsta(Pomocno.ucitajString("vrsta ( " + s.getVrsta() + ")"));
-		// s.setPocetak(Pomocno.ucitajString("poèetak ( " + s.getPocetak() + ")"));
-		// s.setKraj(Pomocno.ucitajString("kraj ( " + s.getKraj() + ")"));
+		s.setPocetak(Pomocno.ucitajDatum("poèetak ( " + s.getPocetak() + ")"));
+		s.setKraj(Pomocno.ucitajDatum("kraj ( " + s.getKraj() + ")"));
 
 	}
 }
