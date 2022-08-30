@@ -66,6 +66,14 @@ public class Start {
 		r.setRibolovnodrustvo(ribolovnadrustva.get(1));
 		ribici.add(r);
 
+		Natjecanje n = new Natjecanje();
+		n.setVrsta("Društveno natjecanje");
+		n.setRiboloviste(ribolovista.get(0));
+		natjecanja.add(n);
+		n.setVrsta("Opæinsko natjecanje");
+		n.setRiboloviste(ribolovista.get(1));
+		natjecanja.add(n);
+
 	}
 
 	private void pokreniProgram() {
