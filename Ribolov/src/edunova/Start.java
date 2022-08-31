@@ -47,8 +47,8 @@ public class Start {
 		ribici = new ArrayList<>();
 		ulovi = new ArrayList<>();
 
-		// inicijalniPodaci();
-		procitajSDiska();
+		inicijalniPodaci();
+		// procitajSDiska();
 		Pomocno.ulaz = new Scanner(System.in);
 		System.out.println("***** Ribolov konzolna aplikacija *****");
 		izbornik();
