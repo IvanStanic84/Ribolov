@@ -15,7 +15,7 @@ public class RibicCRUD {
 		s.setPrezime(Pomocno.ucitajString("Unesi prezime ribièa"));
 		s.setOib(Pomocno.ucitajString("Unesi OIB ribièa"));
 
-		System.out.println("Popis ribolovnih društava u aplikaciji");
+		
 		RibolovnodrustvoCRUD.ispis(ribolovnadrustva);
 		s.setRibolovnodrustvo(
 				ribolovnadrustva.get(Pomocno.ucitajInt("Odaberi ribolovno društvo", 1, ribolovnadrustva.size()) - 1));

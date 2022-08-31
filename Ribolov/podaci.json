@@ -1,0 +1,112 @@
+{
+  "natjecanja": [
+    {
+      "vrsta": "Društveno natjecanje",
+      "riboloviste": {
+        "naziv": "Podgajci",
+        "vrstavode": "Stajaèica",
+        "sifra": 1
+      }
+    },
+    {
+      "vrsta": "Opæinsko natjecanje",
+      "riboloviste": {
+        "naziv": "Ivanovci",
+        "vrstavode": "Tekuèica",
+        "sifra": 2
+      }
+    }
+  ],
+  "ribolovista": [
+    {
+      "naziv": "Podgajci",
+      "vrstavode": "Stajaèica",
+      "sifra": 1
+    },
+    {
+      "naziv": "Ivanovci",
+      "vrstavode": "Tekuèica",
+      "sifra": 2
+    },
+    {
+      "naziv": "Ladimirevci",
+      "vrstavode": "Bara",
+      "sifra": 3
+    }
+  ],
+  "ribolovnadrustva": [
+    {
+      "ime": "Linjak",
+      "mjesto": "Ivanovci",
+      "oib": "",
+      "iban": "",
+      "sifra": 1
+    },
+    {
+      "ime": "Smuð",
+      "mjesto": "Satnica",
+      "oib": "",
+      "iban": "",
+      "sifra": 2
+    },
+    {
+      "ime": "Karas",
+      "mjesto": "Šag",
+      "oib": "",
+      "iban": "",
+      "sifra": 3
+    }
+  ],
+  "ribe": [
+    {
+      "vrsta": "Keder",
+      "sifra": 1
+    },
+    {
+      "vrsta": "Babuška",
+      "sifra": 2
+    },
+    {
+      "vrsta": "Deverika",
+      "sifra": 3
+    }
+  ],
+  "ribici": [
+    {
+      "ime": "Sofija",
+      "prezime": "Staniæ",
+      "ribolovnodrustvo": {
+        "ime": "Linjak",
+        "mjesto": "Ivanovci",
+        "oib": "",
+        "iban": "",
+        "sifra": 1
+      }
+    },
+    {
+      "ime": "Vanesa",
+      "prezime": "Kasapoviæ",
+      "ribolovnodrustvo": {
+        "ime": "Smuð",
+        "mjesto": "Satnica",
+        "oib": "",
+        "iban": "",
+        "sifra": 2
+      }
+    },
+    {
+      "ime": "drugo ime",
+      "prezime": "1",
+      "oib": "24",
+      "ribolovnodrustvo": {
+        "ime": "Karas",
+        "mjesto": "Šag",
+        "oib": "",
+        "iban": "",
+        "sifra": 3
+      },
+      "sifra": 1
+    }
+  ],
+  "ulovi": []
+}

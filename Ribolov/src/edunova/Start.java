@@ -1,8 +1,21 @@
 package edunova;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.lang.reflect.Type;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+
+import com.google.gson.ExclusionStrategy;
+import com.google.gson.FieldAttributes;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonSyntaxException;
+import com.google.gson.reflect.TypeToken;
+
 import edunova.model.Natjecanje;
 import edunova.model.Riba;
 import edunova.model.Ribic;
@@ -34,8 +47,8 @@ public class Start {
 		ribici = new ArrayList<>();
 		ulovi = new ArrayList<>();
 
-		inicijalniPodaci();
-
+		// inicijalniPodaci();
+		procitajSDiska();
 		Pomocno.ulaz = new Scanner(System.in);
 		System.out.println("***** Ribolov konzolna aplikacija *****");
 		izbornik();
@@ -61,6 +74,7 @@ public class Start {
 		r.setPrezime("Staniæ");
 		r.setRibolovnodrustvo(ribolovnadrustva.get(0));
 		ribici.add(r);
+		r = new Ribic();
 		r.setIme("Vanesa");
 		r.setPrezime("Kasapoviæ");
 		r.setRibolovnodrustvo(ribolovnadrustva.get(1));
@@ -70,6 +84,7 @@ public class Start {
 		n.setVrsta("Društveno natjecanje");
 		n.setRiboloviste(ribolovista.get(0));
 		natjecanja.add(n);
+		n = new Natjecanje();
 		n.setVrsta("Opæinsko natjecanje");
 		n.setRiboloviste(ribolovista.get(1));
 		natjecanja.add(n);
@@ -275,7 +290,6 @@ public class Start {
 
 	private void ribici() {
 		System.out.println("----Ribiè----'");
-		System.out.println("----Natjecanje----");
 		izbornikProgram();
 		pokreniRibicAkcija();
 		izbornik();
@@ -286,6 +300,7 @@ public class Start {
 		switch (Pomocno.ucitajInt("Odaberite akciju", 1, 5)) {
 		case 1:
 			ribici.add(RibicCRUD.unosNovog(ribolovnadrustva));
+			spremanjeNaDisk();
 			ribici();
 			break;
 		case 2:
@@ -335,6 +350,70 @@ public class Start {
 
 	public static void main(String[] args) {
 		new Start();
+	}
+
+	private void spremanjeNaDisk() {
+
+		Spremanje s = new Spremanje();
+
+		s.setNatjecanja(natjecanja);
+		s.setRibe(ribe);
+		s.setRibici(ribici);
+		s.setRibolovista(ribolovista);
+		s.setRibolovnadrustva(ribolovnadrustva);
+		s.setUlovi(ulovi);
+
+		ExclusionStrategy strategija = new ExclusionStrategy() {
+			@Override
+			public boolean shouldSkipField(FieldAttributes fa) {
+				if (fa.getDeclaringClass() == Natjecanje.class && fa.getName().equals("ulovi")) {
+					return true;
+				}
+				return false;
+			}
+
+			@Override
+			public boolean shouldSkipClass(Class<?> type) {
+				return false;
+			}
+
+		};
+
+		Gson gson = new GsonBuilder().setExclusionStrategies(strategija).setPrettyPrinting()
+				.setDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ").create();
+
+		try {
+			FileWriter fw = new FileWriter("podaci.json");
+			fw.write(gson.toJson(s));
+			fw.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
+	private void procitajSDiska() {
+		Gson g = new Gson();
+
+		Type dataType = (new TypeToken<Spremanje>() {
+		}).getType();
+
+		try {
+			Spremanje s = g.fromJson(Files.readString(Path.of("podaci.json")), dataType);
+			this.natjecanja = s.getNatjecanja();
+			this.ribe = s.getRibe();
+			this.ribici = s.getRibici();
+			this.ribolovista = s.getRibolovista();
+			this.ribolovnadrustva = s.getRibolovnadrustva();
+			this.ulovi = s.getUlovi();
+		} catch (JsonSyntaxException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }
