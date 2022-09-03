@@ -28,7 +28,7 @@ public class NatjecanjeCRUD {
 		System.out.println("");
 		System.out.println("Natjecanja u aplikaciji");
 		for (Natjecanje s : natjecanja) {
-			System.out.println(rb++ + ". " + s.getVrsta() + " " + s.getRiboloviste() + " " + s.getPocetak());
+			System.out.println(rb++ + ". " + s.getVrsta());
 		}
 		System.out.println("----------");
 	}

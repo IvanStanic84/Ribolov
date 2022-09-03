@@ -95,17 +95,17 @@
       }
     },
     {
-      "ime": "drugo ime",
-      "prezime": "1",
-      "oib": "24",
+      "ime": "er",
+      "prezime": "werwer",
+      "oib": "56465",
       "ribolovnodrustvo": {
-        "ime": "Karas",
-        "mjesto": "Šag",
+        "ime": "Linjak",
+        "mjesto": "Ivanovci",
         "oib": "",
         "iban": "",
-        "sifra": 3
+        "sifra": 1
       },
-      "sifra": 1
+      "sifra": 5
     }
   ],
   "ulovi": []
